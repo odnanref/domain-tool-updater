@@ -44,7 +44,7 @@ jobs:
                 mkdir -p bin/${GOOS}-${GOARCH}
                 out=bin/${GOOS}-${GOARCH}/domain-tool-updater
                 if [ "${GOOS}" = "windows" ]; then out=${out}.exe; fi
-                GOOS=${GOOS} GOARCH=${GOARCH} go build -ldflags="-s -w" -o "${out}" ./...
+                GOOS=${GOOS} GOARCH=${GOARCH} go build -ldflags="-s -w" -o "${out}" .
 
             - name: Upload binaries artifact
               uses: actions/upload-artifact@v4
